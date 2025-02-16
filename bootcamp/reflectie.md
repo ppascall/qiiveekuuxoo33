@@ -1,0 +1,8 @@
+## Reflectie op eigen handelen
+Effectiviteit van eigen handelen: Tijdens de bootcamp heb ik geleerd hoe ik mijn aanpak kan verbeteren. Ik kan nu aangeven wat wel en niet effectief was in mijn handelen en waarom. Bijvoorbeeld, ik merkte dat het plannen van mijn taken aan het begin van de dag mijn productiviteit verhoogde. Dit was effectief omdat het me hielp gefocust te blijven en mijn tijd beter te beheren.  Inzicht in consequenties van eigen handelen: Ik heb inzicht gekregen in hoe mijn aanpak consequenties heeft voor mijn werk. Ik kan nu beter overzien hoe ik mijn taken aanpak en ik heb concrete verbeterpunten opgesteld. Bijvoorbeeld, ik heb geleerd dat het belangrijk is om regelmatig pauzes te nemen om mijn concentratie te behouden. Dit zal ik de volgende keer blijven doen omdat het mijn efficiëntie verhoogt.  
+
+## Reflectie op eigen werk
+Reflecteren op de kwaliteit van het werk: Ik kan nu uitleggen wat er goed gaat in mijn werk en wat niet. Ik heb een paar verbeterpunten benoemd, zoals het beter documenteren van mijn code en het meer testen van mijn werk. Dit zal ik de volgende keer blijven doen omdat het de kwaliteit van mijn werk verbetert.  
+
+## Reflectie op het gebied van de AI
+Reflecteren op de inhoud en breedte van het vakgebied: Ik heb een goed beeld gekregen van de opbouw en breedte van het AI vakgebied. Ik kan uitleggen wat er mogelijk is met de verschillende AI onderdelen en de onderlinge relaties benoemen. Daarnaast kan ik de sterke en zwakke punten van de verschillende onderdelen verwoorden. Bijvoorbeeld, ik heb geleerd dat machine learning krachtig is voor patroonherkenning, maar dat het ook gevoelig is voor overfitting
