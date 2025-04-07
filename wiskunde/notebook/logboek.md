@@ -1,7 +1,5 @@
 # 📚 Volledige Wiskunde Samenvatting
 
-Deze uitgebreide samenvatting behandelt alle onderwerpen met uitleg, wiskundige formules, uitwerkingen en voorbeelden. Dit is klaar voor gebruik in Markdown editors met LaTeX ondersteuning.
-
 ---
 
 ## 🔢 A. Rekenen met getallen en letters
@@ -239,3 +237,35 @@ Voor zeldzame gebeurtenissen in tijd of ruimte:
 $$ P(X = k) = \frac{\lambda^k e^{-\lambda}}{k!} $$
 
 ---
+
+---
+
+## 🧮 S4. Matrixrekenen
+
+### S4.1 Matrixdefinities  
+- **Matrix**: Een rechthoekige tabel met getallen (elementen), genoteerd als hoofdletter (bijv. \( A \)).  
+- **Dimensie**: Aantal rijen × aantal kolommen, bijv. \( A_{2 \times 3} \).
+
+### S4.2 Optellen en Aftrekken  
+Alleen mogelijk als matrices dezelfde dimensie hebben:  
+$$ C = A + B \Rightarrow c_{ij} = a_{ij} + b_{ij} $$
+
+### S4.3 Scalair Vermenigvuldigen  
+Elke element wordt vermenigvuldigd met een getal (scalair):  
+$$ (kA)_{ij} = k \cdot a_{ij} $$
+
+### S4.4 Matrixvermenigvuldiging  
+Alleen mogelijk als aantal kolommen van \( A \) gelijk is aan aantal rijen van \( B \):  
+$$ C = A \cdot B \Rightarrow c_{ij} = \sum_{k=1}^{n} a_{ik} \cdot b_{kj} $$
+
+### S4.5 Transponeren  
+Rijen worden kolommen en omgekeerd:  
+$$ A^T_{ij} = A_{ji} $$
+
+### S4.6 Inverse Matrix  
+Alleen voor vierkante matrices met determinant \( \neq 0 \):  
+$$ A \cdot A^{-1} = I $$  
+waarbij \( I \) de identiteitsmatrix is.
+
+---
+
