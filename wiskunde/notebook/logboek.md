@@ -1,271 +1,115 @@
-# 📚 Volledige Wiskunde Samenvatting
+# Logboek Lineaire Algebra — Assessmentvoorbereiding
+
+**Gebaseerd op:** Tutorial van [3Blue1Brown - Essence of Linear Algebra](https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr)
+
+## Inhoudsopgave
+- [1. Matrices](#1-matrices)
+- [2. Inproduct van vectoren](#2-inproduct-van-vectoren)
+- [3. Afstand tussen vectoren](#3-afstand-tussen-vectoren)
+- [4. Reflectie](#4-reflectie)
 
 ---
 
-## 🔢 A. Rekenen met getallen en letters
+## 1. Matrices
 
-### A.1.1 Termen en factoren
-**Uitleg:**  
-Termen zijn gescheiden door plus- of mintekens, terwijl factoren met elkaar vermenigvuldigd worden binnen een term.
+### Wat is een matrix?
+Een matrix is een rechthoekige tabel van getallen, met rijen en kolommen. In lineaire algebra gebruik je matrices vooral om lineaire transformaties uit te voeren, zoals schalen, draaien en spiegelen.
 
-**Voorbeeld:**  
-$$ 3x + 4x - 2x = (3 + 4 - 2)x = 5x $$
+### Voorbeeld: Schaling
+Als we een vector vermenigvuldigen met een matrix die de vorm heeft van een diagonaal met dezelfde waarde, bijvoorbeeld:
 
-**Belang:**  
-Essentieel bij het vereenvoudigen van algebraïsche expressies en het oplossen van vergelijkingen.
+\[ A = \begin{bmatrix} 2 & 0 \\ 0 & 2 \end{bmatrix}, \quad \vec{v} = \begin{bmatrix} 1 \\ 1 \end{bmatrix} \]
 
----
+Dan krijgen we:
 
-### A.1.2 Haakjes wegwerken
-**Uitleg:**  
-Je gebruikt de distributieve eigenschap om haakjes te verwijderen:  
-$$ a(b + c) = ab + ac $$
+\[ A \cdot \vec{v} = \begin{bmatrix} 2 \\ 2 \end{bmatrix} \]
 
-**Voorbeeld:**  
-$$ 2(x + 3) = 2x + 6 $$
+Dit betekent dat de vector twee keer zo lang wordt, dus hij wordt geschaald.
 
-**Toepassing:**  
-Komt veel voor bij het oplossen van vergelijkingen of bij het herschrijven van functies.
+### Voorbeeld: Rotatie
+Een matrix kan ook een rotatie uitvoeren. De rotatiematrix over een hoek \( \theta \) in 2D is:
 
----
+\[ R(\theta) = \begin{bmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta \end{bmatrix} \]
 
-### A.1.3 Ontbinden in factoren
-**Uitleg:**  
-Het omgekeerde van haakjes wegwerken. Je haalt een gemeenschappelijke factor buiten de haakjes.
+Bijvoorbeeld, bij een draaiing van 45 graden:
 
-**Voorbeeld:**  
-$$ 6x + 9 = 3(2x + 3) $$
+\[ R(45^°) = \begin{bmatrix} \frac{\sqrt{2}}{2} & -\frac{\sqrt{2}}{2} \\ \frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2} \end{bmatrix} \]
 
-**Belang:**  
-Belangrijk bij het oplossen van kwadratische vergelijkingen door middel van de nulproductenregel:  
-$$ (x - 2)(x + 3) = 0 \Rightarrow x = 2 \text{ of } x = -3 $$
+Als je een vector \( \begin{bmatrix} 2 \\ 0 \end{bmatrix} \) draait met deze matrix, krijg je een vector die in een hoek van 45 graden ligt met dezelfde lengte.
 
 ---
 
-### A.2.1 Ontbinden in priemfactoren
-**Uitleg:**  
-Schrijf een getal als een product van priemgetallen.
+## 2. Inproduct van vectoren
 
-**Voorbeeld:**  
-$$ 60 = 2 \cdot 2 \cdot 3 \cdot 5 = 2^2 \cdot 3 \cdot 5 $$
+### Wat is het inproduct?
+Het inproduct (ook wel scalair product genoemd) van twee vectoren \( \vec{a} \) en \( \vec{b} \) is een getal dat iets zegt over hoe "gericht" de vectoren zijn ten opzichte van elkaar.
 
-**Belang:**  
-Handig voor het berekenen van GGD en KGV.
+De formule is:
 
----
+\[ \vec{a} \cdot \vec{b} = a_1 b_1 + a_2 b_2 \]
 
-### A.3.1 Breuken vereenvoudigen
-**Uitleg:**  
-Zoek naar een gemeenschappelijke deler in teller en noemer.
+### Voorbeeld:
 
-**Voorbeeld:**  
-$$ \frac{6x}{9} = \frac{2x}{3} $$
+\[ \vec{a} = \begin{bmatrix} 1 \\ 2 \end{bmatrix}, \quad \vec{b} = \begin{bmatrix} 3 \\ 4 \end{bmatrix} \]
 
----
+Dan is:
 
-### A.3.2 Rekenen met breuken
-- **Optellen:**
-  $$ \frac{a}{b} + \frac{c}{b} = \frac{a + c}{b} $$
+\[ \vec{a} \cdot \vec{b} = 1 \cdot 3 + 2 \cdot 4 = 3 + 8 = 11 \]
 
-- **Vermenigvuldigen:**
-  $$ \frac{a}{b} \cdot \frac{c}{d} = \frac{ac}{bd} $$
+### Hoek tussen vectoren
+Je kunt het inproduct ook gebruiken om de hoek tussen twee vectoren te berekenen:
 
-- **Delen:**
-  $$ \frac{a}{b} \div \frac{c}{d} = \frac{a}{b} \cdot \frac{d}{c} $$
+\[ \vec{a} \cdot \vec{b} = \|\vec{a}\| \cdot \|\vec{b}\| \cdot \cos(\theta) \]
 
-**Voorbeeld:**  
-$$ \frac{2}{3} + \frac{4}{3} = \frac{6}{3} = 2 $$
+Dus:
+
+\[ \cos(\theta) = \frac{\vec{a} \cdot \vec{b}}{\|\vec{a}\| \cdot \|\vec{b}\|} \]
+
+En zo kun je met de inverse cosinus (arccos) de hoek \( \theta \) berekenen.
 
 ---
 
-### A.4.1 Rekenen met machten
-**Regels:**
-- Productregel: $$ a^m \cdot a^n = a^{m+n} $$
-- Quotiëntregel: $$ \frac{a^m}{a^n} = a^{m-n} $$
-- Machten van machten: $$ (a^m)^n = a^{mn} $$
+## 3. Afstand tussen vectoren
 
-**Voorbeeld:**  
-$$ (2^3)^2 = 2^6 = 64 $$
+### Wat betekent afstand?
+De afstand tussen twee vectoren in een vlak of ruimte is gewoon de lengte van het verschil tussen die vectoren.
 
----
+Als \( \vec{x} \) en \( \vec{y} \) twee vectoren zijn, dan is:
 
-### A.5.1 Rekenen met wortels
-**Regels:**
-- $$ \sqrt{a \cdot b} = \sqrt{a} \cdot \sqrt{b} $$
-- $$ \sqrt{\frac{a}{b}} = \frac{\sqrt{a}}{\sqrt{b}} $$
+\[ d(\vec{x}, \vec{y}) = \|\vec{x} - \vec{y}\| \]
 
-**Voorbeeld:**  
-$$ \sqrt{50} = \sqrt{25 \cdot 2} = 5\sqrt{2} $$
+Hierbij gebruiken we de Euclidische norm (ook wel de lengte of magnitude genoemd):
 
----
+\[ \|\vec{v}\| = \sqrt{v_1^2 + v_2^2} \]
 
-## 🧩 B. Formules manipuleren
+### Voorbeeld:
 
-### B.3.1 Isoleren van een variabele
-**Doel:**  
-Breng formule naar vorm \( x = \ldots \)
+\[ \vec{x} = \begin{bmatrix} 5 \\ 1 \end{bmatrix}, \quad \vec{y} = \begin{bmatrix} 1 \\ 4 \end{bmatrix} \]
 
-**Voorbeeld:**  
-$$ 3x + 2 = 11 \Rightarrow 3x = 9 \Rightarrow x = 3 $$
+Dan:
 
-**Belang:**  
-Cruciaal bij het herschrijven van functies en oplossen van fysische vergelijkingen.
+\[ \vec{x} - \vec{y} = \begin{bmatrix} 4 \\ -3 \end{bmatrix} \]
+
+\[ d(\vec{x}, \vec{y}) = \sqrt{4^2 + (-3)^2} = \sqrt{16 + 9} = \sqrt{25} = 5 \]
+
+Dus de afstand tussen \( \vec{x} \) en \( \vec{y} \) is 5 eenheden.
 
 ---
 
-## ➗ C1. Vergelijkingen oplossen
+## 4. Reflectie
 
-### C1.1 Lineaire vergelijking
-**Voorbeeld:**  
-$$ 2x - 4 = 10 \Rightarrow 2x = 14 \Rightarrow x = 7 $$
+Wat heb ik geleerd?
+- Ik begrijp nu hoe matrices gebruikt worden om transformaties uit te voeren.
+- Ik zie hoe het inproduct nuttig is om richtingen en hoeken te analyseren.
+- Ik kan de afstand tussen vectoren wiskundig onderbouwen en berekenen.
 
-### C1.2 Gebroken vergelijking
-**Voorbeeld:**  
-$$ \frac{1}{x} + \frac{2}{x} = 3 \Rightarrow \frac{3}{x} = 3 \Rightarrow x = 1 $$
+Wat zou ik nog verder willen doen?
+- Werken met 3D vectoren en transformaties.
+- Meer toepassingen in machine learning en grafische weergave onderzoeken.
 
-### C1.3 Kwadratische vergelijking
-**Formule:**  
-$$ ax^2 + bx + c = 0 \Rightarrow x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} $$
-
-**Voorbeeld:**  
-$$ 2x^2 - 4x - 6 = 0 \Rightarrow x = \frac{4 \pm \sqrt{(-4)^2 + 4 \cdot 2 \cdot 6}}{4} = 3, -1 $$
-
-### C1.4 Wortelvergelijking
-**Voorbeeld:**  
-$$ \sqrt{x + 3} = 5 \Rightarrow x + 3 = 25 \Rightarrow x = 22 $$
-
-**Let op:**  
-Altijd controleren op valse oplossingen.
-
----
-
-## 📈 C2. Functies en grafieken
-
-### C2.1 Functies manipuleren  
-Functies herschrijven, bv. haakjes wegwerken, herleiden, domein bepalen.
-
-### C2.2 Lineaire functie opstellen  
-$$ f(x) = ax + b $$ — bepaal \( a \) als richtingscoëfficiënt en \( b \) als snijpunt met de y-as.
-
-### C2.3 Gebroken lineaire functie  
-$$ f(x) = \frac{ax + b}{cx + d} $$ — domein uitsluiten bij \( cx + d = 0 \).
-
-### C2.4 Kwadratische functie opstellen  
-Standaardvorm:  
-$$ f(x) = ax^2 + bx + c $$
-
-Topvorm:  
-$$ f(x) = a(x - p)^2 + q $$
-
-### C2.5 Wortelfunctie  
-$$ f(x) = \sqrt{x - a} + b $$ — domein: \( x \geq a \)
-
-### C2.6 Ongelijkheden oplossen  
-Grafisch of algebraïsch oplossen van ongelijkheden.
-
----
-
-## 🔁 D1. Differentiëren
-
-### D1.1 Helling bepalen  
-Gebruik afgeleide:  
-$$ f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h} $$
-
-### D1.2 t/m D1.5  
-**Basisregels:**
-- Machtregel: \( f(x) = x^n \Rightarrow f'(x) = nx^{n-1} \)
-- Somregel: \( (f+g)' = f' + g' \)
-- Productregel: \( (fg)' = f'g + fg' \)
-- Quotiëntregel: \( \left(\frac{f}{g}\right)' = \frac{f'g - fg'}{g^2} \)
-- Kettingregel: \( \frac{d}{dx} f(g(x)) = f'(g(x)) \cdot g'(x) \)
-
----
-
-## 📉 E1. Logaritmen en exponenten
-
-### E1.1 Rekenen met logaritmen  
-**Regels:**
-- \( \log_b(xy) = \log_b(x) + \log_b(y) \)
-- \( \log_b\left(\frac{x}{y}\right) = \log_b(x) - \log_b(y) \)
-- \( \log_b(x^n) = n \log_b(x) \)
-
-### E1.2-3 Oplossen van logaritmische en exponentiële vergelijkingen  
-Breng naar gelijke grondtal, gebruik logaritmische regels om op te lossen.
-
-### E1.4 Afgeleiden log- en exponentiële functies  
-$$ \frac{d}{dx} (\ln x) = \frac{1}{x}, \quad \frac{d}{dx} (e^x) = e^x $$
-
----
-
-## 📊 S1. Algemene statistiek
-
-### S1.2-3 Gemiddelde en mediaan
-- Gemiddelde: \( \bar{x} = \frac{\sum x}{n} \)
-- Mediaan: middelste waarde gesorteerde lijst
-
-### S1.4-6 Kwartielen, boxplot, standaardafwijking
-- Kwartielen splitsen data in 4
-- Standaardafwijking:  
-$$ \sigma = \sqrt{\frac{1}{n} \sum (x_i - \bar{x})^2} $$
-
----
-
-## 🎲 S2. Kansrekening
-
-### S2.1-2 Dobbelsteen en vaasmodellen
-- Kans: \( P = \frac{\text{gunstige}}{\text{totaal}} \)
-- Met of zonder terugleggen: beïnvloedt totale uitkomsten
-
-### S2.3 Verwachtingswaarde  
-$$ E(X) = \sum x_i \cdot P(x_i) $$
-
-### S2.4 Combinatoriek
-- Permutaties: \( n! \)
-- Combinaties:  
-$$ \binom{n}{k} = \frac{n!}{k!(n-k)!} $$
-
----
-
-## 🔢 S3. Kansverdelingen
-
-### S3.1 Normale verdeling  
-Gebruik Z-score:  
-$$ Z = \frac{x - \mu}{\sigma} $$
-
-### S3.2 Poisson verdeling  
-Voor zeldzame gebeurtenissen in tijd of ruimte:  
-$$ P(X = k) = \frac{\lambda^k e^{-\lambda}}{k!} $$
-
----
-
----
-
-## 🧮 S4. Matrixrekenen
-
-### S4.1 Matrixdefinities  
-- **Matrix**: Een rechthoekige tabel met getallen (elementen), genoteerd als hoofdletter (bijv. \( A \)).  
-- **Dimensie**: Aantal rijen × aantal kolommen, bijv. \( A_{2 \times 3} \).
-
-### S4.2 Optellen en Aftrekken  
-Alleen mogelijk als matrices dezelfde dimensie hebben:  
-$$ C = A + B \Rightarrow c_{ij} = a_{ij} + b_{ij} $$
-
-### S4.3 Scalair Vermenigvuldigen  
-Elke element wordt vermenigvuldigd met een getal (scalair):  
-$$ (kA)_{ij} = k \cdot a_{ij} $$
-
-### S4.4 Matrixvermenigvuldiging  
-Alleen mogelijk als aantal kolommen van \( A \) gelijk is aan aantal rijen van \( B \):  
-$$ C = A \cdot B \Rightarrow c_{ij} = \sum_{k=1}^{n} a_{ik} \cdot b_{kj} $$
-
-### S4.5 Transponeren  
-Rijen worden kolommen en omgekeerd:  
-$$ A^T_{ij} = A_{ji} $$
-
-### S4.6 Inverse Matrix  
-Alleen voor vierkante matrices met determinant \( \neq 0 \):  
-$$ A \cdot A^{-1} = I $$  
-waarbij \( I \) de identiteitsmatrix is.
-
----
+Toepassingen:
+- 2D/3D graphics en animaties
+- Machine learning (zoals cosine similarity)
+- Recommender systems en clustering
+- Technische simulaties en computer vision
 
