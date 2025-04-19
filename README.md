@@ -7,7 +7,7 @@ Voor het bewijs maak je vaak gebruikt van notebooks die gedeeltelijk zijn gemaak
 | Matrices                 | T                  | Theorie & Voorbeeld | Matrixtransformaties zoals rotatie en schaling | Gebaseerd op 3Blue1Brown. Toegevoegd: uitleg over matrixschaling en rotatie met formules én voorbeelden. Toont begrip van hoe matrices vectoren transformeren.                    | 1                      |                    |
 | Vectoren Inproduct       | T                  | Theorie & Voorbeeld | Uitleg en toepassing van het scalair product  | Gebaseerd op 3Blue1Brown. Toegevoegd: rekenvoorbeeld van inproduct en uitleg over hoe het gebruikt wordt voor het berekenen van hoeken tussen vectoren.                           | 1                      |                    |
 | Afstand                  | T                  | Theorie & Voorbeeld | Berekening van afstand tussen vectoren        | Gebaseerd op 3Blue1Brown. Toegevoegd: Euclidische norm uitleg met concreet voorbeeld van het berekenen van afstand tussen twee vectoren.                                          | 1                      |                    |
-
+| | | | | | | |
 | **Differentieren** | **Vereiste soort** | **Soort** | **Opdracht** | **Eigen werk** | **Sprint (optioneel)** | *coach opmerking* |
 | Functiebegrip | T | | | | 1 | | 
 | Activatiefuncties | T | | | | 2 | |
