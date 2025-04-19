@@ -113,3 +113,109 @@ Toepassingen:
 - Recommender systems en clustering
 - Technische simulaties en computer vision
 
+# Logboek Differentiëren — Assessmentvoorbereiding
+
+Gebaseerd op:  
+- 3Blue1Brown – Essence of Calculus (YouTube): https://www.youtube.com/playlist?list=PLZHQObOWTQDNPOjrT6KVlfJuKtYTftqH6  
+- Khan Academy uitleg over afgeleiden  
+- Eigen aanvullingen en uitleg
+
+---
+
+## Inhoud
+
+1. Wat is een afgeleide?
+2. Helling als grafisch begrip
+3. Symbolisch differentiëren (zonder code)
+4. Afgeleide via limietdefinitie
+5. Samenvatting eigen werk
+
+---
+
+## 1. Wat is een afgeleide?
+
+Een afgeleide van een functie geeft aan hoe snel de functie verandert bij een bepaald punt.  
+Bijvoorbeeld:  
+Als f(x) = x², dan is f '(x) = 2x.  
+Bij x = 1 is de afgeleide 2 × 1 = 2 → dit betekent dat de grafiek daar een helling van 2 heeft.
+
+**Interpretatie:**  
+- Een positieve afgeleide betekent stijging.  
+- Een negatieve afgeleide betekent daling.  
+- Een afgeleide van nul betekent een horizontale raaklijn.
+
+---
+
+## 2. Helling als grafisch begrip
+
+In de video's van 3Blue1Brown wordt uitgelegd dat de afgeleide voortkomt uit het idee van een raaklijn aan een kromme.  
+Een raaklijn is de rechte lijn die precies "meeloopt" met de grafiek op één punt.
+
+Je kunt dit voorstellen als het nemen van de helling tussen twee punten (secant), en deze steeds dichter bij elkaar brengen totdat het één punt wordt. Dan krijg je de helling van de raaklijn: de afgeleide.
+
+**Eigen toevoeging:**  
+Ik heb zelf een schets gemaakt waarin je een kromme ziet met een raaklijn. Bij verschillende x-waarden heb ik de helling benaderd. Dit helpt visueel om het begrip beter te vatten.
+
+**Waarom toegevoegd:**  
+Niet iedereen begrijpt formules direct. Door visueel te denken wordt het idee van "helling" en "verandering" tastbaarder.
+
+---
+
+## 3. Symbolisch differentiëren (zonder code)
+
+Voor standaardfuncties kun je de afgeleide berekenen met bekende regels:
+
+- Machtregel:  
+  Als f(x) = xⁿ, dan is f '(x) = n·xⁿ⁻¹  
+  Voorbeeld: f(x) = x³ → f '(x) = 3x²
+
+- Somregel:  
+  De afgeleide van f(x) + g(x) is f '(x) + g '(x)
+
+- Constantefactorregel:  
+  De afgeleide van c·f(x) is c·f '(x)
+
+- Productregel:  
+  f(x)·g(x) → f '(x)·g(x) + f(x)·g '(x)
+
+- Quotientregel:  
+  f(x)/g(x) → (f '(x)·g(x) - f(x)·g '(x)) / g(x)²
+
+- Kettingregel:  
+  Als f(x) = h(g(x)), dan is f '(x) = h '(g(x))·g '(x)
+
+**Eigen toevoeging:**  
+Ik heb oefenvoorbeelden uitgewerkt met verschillende regels gecombineerd, zoals een product én kettingregel in één. Deze heb ik voorzien van uitleg bij elke stap.
+
+**Waarom toegevoegd:**  
+In het assessment wil ik laten zien dat ik de regels niet alleen ken, maar ze ook kan combineren en toepassen op complexere functies.
+
+---
+
+## 4. Afgeleide via limietdefinitie
+
+De definitie van de afgeleide is gebaseerd op een limiet:
+
+f '(x) = lim(h → 0) [(f(x + h) - f(x)) / h]
+
+Deze formule betekent:  
+De afgeleide is de grenswaarde van de gemiddelde verandering van de functie tussen twee dichtbije punten, naarmate het verschil h kleiner en kleiner wordt.
+
+Voorbeeld met f(x) = x²:
+
+- f(x + h) = (x + h)² = x² + 2xh + h²  
+- f(x + h) - f(x) = 2xh + h²  
+- (f(x + h) - f(x)) / h = 2x + h  
+- lim(h → 0) = 2x
+
+Dus: f '(x) = 2x
+
+**Eigen toevoeging:**  
+Ik heb deze stap-voor-stap uitgewerkt voor meerdere functies (zoals x³, √x en 1/x) op papier en uitgelegd wat er in elke stap gebeurt.
+
+**Waarom toegevoegd:**  
+Dit laat zien dat ik de definitie begrijp, en niet alleen regels toepas. Het helpt ook bij functies waarbij regels niet meteen toepasbaar zijn.
+
+
+---
+

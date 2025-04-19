@@ -8,12 +8,13 @@ Voor het bewijs maak je vaak gebruikt van notebooks die gedeeltelijk zijn gemaak
 | Vectoren Inproduct       | T                  | Theorie & Voorbeeld | Uitleg en toepassing van het scalair product  | Gebaseerd op 3Blue1Brown. Toegevoegd: rekenvoorbeeld van inproduct en uitleg over hoe het gebruikt wordt voor het berekenen van hoeken tussen vectoren.                           | 1                      |                    |
 | Afstand                  | T                  | Theorie & Voorbeeld | Berekening van afstand tussen vectoren        | Gebaseerd op 3Blue1Brown. Toegevoegd: Euclidische norm uitleg met concreet voorbeeld van het berekenen van afstand tussen twee vectoren.                                          | 1                      |                    |
 | | | | | | | |
-| **Differentieren** | **Vereiste soort** | **Soort** | **Opdracht** | **Eigen werk** | **Sprint (optioneel)** | *coach opmerking* |
-| Functiebegrip | T | | | | 1 | | 
-| Activatiefuncties | T | | | | 2 | |
-| Helling bepalen | T | | | | 2 | | 
-| Differentieren | T | | | | 1 | |
-| Partieel differentieren | T | | | | 1 | |
+| **Differentieren**             | **Vereiste soort** | **Soort** | **Opdracht** | **Eigen werk**                                                | **Sprint (optioneel)** | *coach opmerking* |
+|-------------------------------|--------------------|-----------|--------------|----------------------------------------------------------------|-------------------------|-------------------|
+| Functiebegrip                 | T                  |           | Begrip van afgeleide via uitleg en voorbeelden                | Gebaseerd op Khan Academy + eigen uitleg toegevoegd           | 1                       |                   |
+| Activatiefuncties             | T                  |           | Raaklijn en helling visueel uitgelegd                         | 3Blue1Brown video gevolgd + zelf visualisaties geschetst       | 2                       |                   |
+| Helling bepalen               | T                  |           | Helling bepaald aan de hand van limietdefinitie              | Volledige stappen uitgewerkt met uitleg van elke tussenstap   | 2                       |                   |
+| Differentieren                | T                  |           | Symbolisch differentiëren met regels                          | Oefeningen gemaakt met stap-voor-stap uitleg                  | 1                       |                   |
+| Partieel differentieren       | T                  |           | (Nog toe te voegen of op andere pagina)                       |                                                              | 1                       |                   |
 | | | | | | | |
 | **Gradient descent** | **Vereiste soort** | **Soort** | **Opdracht** | **Eigen werk** | **Sprint (optioneel)** | *coach opmerking* |
 | Doel | A | | | | 2 | |
