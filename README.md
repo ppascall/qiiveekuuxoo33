@@ -16,10 +16,10 @@ Voor het bewijs maak je vaak gebruikt van notebooks die gedeeltelijk zijn gemaak
 | Differentieren                | T                  |           | Symbolisch differentiëren met regels                          | Oefeningen gemaakt met stap-voor-stap uitleg                  | 1                       |                   |
 | Partieel differentieren       | T                  |           | (Nog toe te voegen of op andere pagina)                       |                                                              | 1                       |                   |
 | | | | | | | |
-| **Gradient descent** | **Vereiste soort** | **Soort** | **Opdracht** | **Eigen werk** | **Sprint (optioneel)** | *coach opmerking* |
-| Doel | A | | | | 2 | |
-| Stappenplan | A | | | | 2 | |
-| Backpropagation | T | | | | 2 | |
+| **Gradient descent** | **Vereiste soort** | **Soort** | **Opdracht** | **Eigen werk** | **Sprint (optioneel)** | *coach opmerking*| Doel                 | A                  |           |               |                | 2                       |                   |
+| Stappenplan          | A                  |           |               |                | 2                       |                   |
+| Backpropagation      | T                  |           |               |                | 2                       |                   |
+| Optimaliseren        | T                  |           |               |  Zelf voorbeeld uitgewerkt met \( f(x) = x^2 \). | 2                       |                   |
 | | | | | | | |
 | **Kostenfuncties** | **Vereiste soort** | **Soort** | **Opdracht** | **Eigen werk** | **Sprint (optioneel)** | *coach opmerking* |
 | Mean Squared Error | T | | | | 2 | |

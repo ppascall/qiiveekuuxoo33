@@ -219,3 +219,115 @@ Dit laat zien dat ik de definitie begrijp, en niet alleen regels toepas. Het hel
 
 ---
 
+## 5. Gradient Descent
+
+### Inhoudsopgave
+- [Wat is gradient descent?](#wat-is-gradient-descent)
+- [Doel](#doel)
+- [Hoe werkt het?](#hoe-werkt-het)
+- [Visuele intuïtie](#visuele-intuïtie)
+- [Voorbeeld (1D)](#voorbeeld-1d)
+- [Backpropagation](#backpropagation)
+- [Toepassingen in AI](#toepassingen-in-ai)
+- [Tabel](#tabel)
+
+---
+
+
+Gradient descent is een methode om een minimum (of maximum) te vinden van een functie. In machine learning wordt het vooral gebruikt om een model te trainen: het zoekt naar de waarden van de parameters (zoals gewichten in een neuraal netwerk) die de fout zo klein mogelijk maken.
+
+Het is alsof je met een blinddoek op een berg staat en alleen voelt waar de helling naar beneden gaat — en je zet telkens kleine stappen omlaag tot je bij het dal komt.
+
+### Wat is het doel?
+Het minimaliseren van een **cost function** (ook wel: loss function). Deze functie geeft aan hoe goed of slecht je model presteert. Hoe lager de waarde, hoe beter je model.
+
+Voorbeeld van een veelgebruikte cost function:
+\[
+J(\theta) = \frac{1}{2m} \sum_{i=1}^m (h_\theta(x^{(i)}) - y^{(i)})^2
+\]
+
+Hierin:
+- \( h_\theta(x) \) is de voorspelling van het model
+- \( y \) is de werkelijke waarde
+- \( m \) is het aantal trainingsvoorbeelden
+
+---
+
+### Hoe werkt het?
+
+Bij elke stap:
+1. Bereken de **gradiënt** (de richting van de stijging).
+2. Neem een stap *tegenovergesteld* aan die richting.
+3. Herhaal totdat je bij een minimum bent.
+
+De updateformule:
+\[
+\theta := \theta - \alpha \cdot \nabla J(\theta)
+\]
+
+Waar:
+- \( \theta \): parameters van je model (bijv. gewichten in een netwerk)
+- \( \alpha \): learning rate (hoe groot je stap is)
+- \( \nabla J(\theta) \): de gradiënt (vector van afgeleiden)
+
+---
+
+### Visuele intuïtie
+
+- Een **grote learning rate** zorgt voor grote stappen — je kunt het minimum overslaan of gaan oscilleren.
+- Een **kleine learning rate** geeft trage, maar stabiele stappen — het duurt langer om te convergeren.
+- De **gradiënt** bepaalt de richting en helling: het is letterlijk het stijgingsgetal in meerdere richtingen tegelijk.
+
+---
+
+### Voorbeeld (1D)
+
+Stel je hebt deze eenvoudige functie:
+\[
+f(x) = x^2
+\]
+
+De afgeleide is:
+\[
+f'(x) = 2x
+\]
+
+Gradient descent doet dan:
+\[
+x := x - \alpha \cdot 2x
+\]
+
+Als \( \alpha = 0.1 \) en je start bij \( x = 5 \), dan krijg je:
+
+- Stap 1: \( x = 5 - 0.1 \cdot 2 \cdot 5 = 4 \)
+- Stap 2: \( x = 4 - 0.1 \cdot 2 \cdot 4 = 3.2 \)
+- enzovoort...
+
+Na genoeg stappen kom je uit bij het minimum \( x = 0 \).
+
+---
+
+### Backpropagation (kort uitgelegd)
+
+In neurale netwerken gebruik je **backpropagation** om de gradiënten te berekenen die nodig zijn voor gradient descent. Het is een slimme manier om de afgeleiden van de lossfunctie t.o.v. alle gewichten efficiënt uit te rekenen, door gebruik te maken van de kettingregel uit de differentiaalrekening.
+
+1. Je berekent de **loss** na een voorspelling.
+2. Je gaat **terug door het netwerk** om afgeleiden te berekenen.
+3. Deze afgeleiden worden gebruikt in gradient descent om de gewichten aan te passen.
+
+---
+
+### Toepassingen in AI
+
+- Training van neurale netwerken (deep learning)
+- Lineaire regressie
+- Logistische regressie
+- Recommender systems
+- Clustering en embedding-optimalisatie
+
+
+
+---
+
+
+
