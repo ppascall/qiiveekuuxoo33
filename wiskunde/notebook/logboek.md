@@ -330,4 +330,172 @@ In neurale netwerken gebruik je **backpropagation** om de gradiënten te bereken
 ---
 
 
+---
+
+# Logboek Wiskunde — Kostenfuncties in Machine Learning
+
+**Onderdeel van:** Statistiek & Machine Learning
+
+Gebaseerd op uitleg uit verschillende tutorials en samenvattingen uit de lessen.
+
+---
+
+## Inhoudsopgave
+- [1. Mean Squared Error (MSE)](#1-mean-squared-error-mse)
+- [2. Cross Entropy](#2-cross-entropy)
+- [3. Softmax](#3-softmax)
+
+---
+
+## 1. Mean Squared Error (MSE)
+
+### Wat is het?
+De **Mean Squared Error** is een veelgebruikte kostenfunctie bij regressieproblemen. Het berekent hoe ver de voorspellingen van het model gemiddeld afwijken van de werkelijke waarden, waarbij fouten extra hard worden afgestraft doordat ze gekwadrateerd worden.
+
+### Formule:
+
+\[
+MSE = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
+\]
+
+waarbij:
+- \( y_i \): de echte waarde
+- \( \hat{y}_i \): de voorspelling van het model
+- \( n \): aantal voorbeelden
+
+### Waarom het werkt:
+Het kwadrateren zorgt ervoor dat grotere fouten zwaarder meetellen. Daarom is het een gevoelige maat voor uitbijters. Hoe lager de MSE, hoe beter het model.
+
+### Voorbeeld:
+
+Stel we hebben deze echte waarden en voorspellingen:
+
+\[
+y = [2, 4, 6], \quad \hat{y} = [3, 5, 4]
+\]
+
+Berekening:
+
+\[
+\begin{align*}
+(2 - 3)^2 &= 1 \\
+(4 - 5)^2 &= 1 \\
+(6 - 4)^2 &= 4 \\
+\end{align*}
+\]
+
+\[
+MSE = \frac{1 + 1 + 4}{3} = \frac{6}{3} = 2
+\]
+
+De gemiddelde fout (gekwadrateerd) is dus 2.
+
+---
+
+## 2. Cross Entropy
+
+### Wat is het?
+**Cross Entropy** wordt gebruikt bij classificatieproblemen, waarbij het model voorspellingen doet in de vorm van kansen. Deze functie vergelijkt de voorspelde kansverdeling met de werkelijke uitkomst en straft verkeerde voorspellingen sterker af als het model er erg zeker van was.
+
+### Formule (binaire classificatie):
+
+\[
+L = - \left[ y \log(\hat{y}) + (1 - y) \log(1 - \hat{y}) \right]
+\]
+
+### Formule (multiclass classificatie):
+
+\[
+L = - \sum_{i=1}^{C} y_i \log(\hat{y}_i)
+\]
+
+waarbij:
+- \( y_i \): 1 als het de juiste klasse is, anders 0
+- \( \hat{y}_i \): voorspelde kans voor klasse \( i \)
+- \( C \): totaal aantal klassen
+
+###  Waarom het werkt:
+Cross entropy meet hoe ver twee kansverdelingen van elkaar afliggen. Als je een verkeerde klasse met hoge zekerheid voorspelt, krijg je een hoge straf.
+
+###  Voorbeeld (multiclass):
+
+Stel:
+
+\[
+y = [0, 1, 0], \quad \hat{y} = [0.2, 0.7, 0.1]
+\]
+
+De juiste klasse is de tweede, dus:
+
+\[
+L = - \log(0.7) \approx 0.357
+\]
+
+Als het model had voorspeld:
+
+\[
+\hat{y} = [0.05, 0.9, 0.05]
+\]
+
+Dan zou:
+
+\[
+L = - \log(0.9) \approx 0.105
+\]
+
+**Lagere cross entropy = betere voorspelling.**
+
+---
+
+## 3. Softmax
+
+### Wat is het?
+De **Softmax**-functie wordt gebruikt om ruwe scores (logits) van een model om te zetten in een kansverdeling over meerdere klassen. Hierdoor kun je afleiden welke klasse het meest waarschijnlijk is.
+
+### Formule:
+
+\[
+\sigma(z)_i = \frac{e^{z_i}}{\sum_{j=1}^{C} e^{z_j}}
+\]
+
+waarbij:
+- \( z \): vector met ruwe scores
+- \( \sigma(z)_i \): kans dat input tot klasse \( i \) behoort
+- \( C \): totaal aantal klassen
+
+### Waarom het werkt:
+De exponentiële functie vergroot de verschillen tussen de scores, waardoor de hoogste score dominant wordt. De output is altijd een kansverdeling die optelt tot 1.
+
+### Voorbeeld:
+
+Stel:
+
+\[
+z = [1, 2, 3]
+\]
+
+Bereken de exponenten:
+
+\[
+e^1 \approx 2.72,\quad e^2 \approx 7.39,\quad e^3 \approx 20.09
+\]
+
+Totaal:
+
+\[
+\sum = 2.72 + 7.39 + 20.09 = 30.2
+\]
+
+Softmax-output:
+
+\[
+\sigma(z) \approx \left[ \frac{2.72}{30.2}, \frac{7.39}{30.2}, \frac{20.09}{30.2} \right] \approx [0.09, 0.24, 0.67]
+\]
+
+De derde klasse heeft de hoogste kans → model voorspelt klasse 3.
+
+---
+
+
+
 

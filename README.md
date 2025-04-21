@@ -9,7 +9,6 @@ Voor het bewijs maak je vaak gebruikt van notebooks die gedeeltelijk zijn gemaak
 | Afstand                  | T                  | Theorie & Voorbeeld | Berekening van afstand tussen vectoren        | Gebaseerd op 3Blue1Brown. Toegevoegd: Euclidische norm uitleg met concreet voorbeeld van het berekenen van afstand tussen twee vectoren.                                          | 1                      |                    |
 | | | | | | | |
 | **Differentieren**             | **Vereiste soort** | **Soort** | **Opdracht** | **Eigen werk**                                                | **Sprint (optioneel)** | *coach opmerking* |
-|-------------------------------|--------------------|-----------|--------------|----------------------------------------------------------------|-------------------------|-------------------|
 | Functiebegrip                 | T                  |           | Begrip van afgeleide via uitleg en voorbeelden                | Gebaseerd op Khan Academy + eigen uitleg toegevoegd           | 1                       |                   |
 | Activatiefuncties             | T                  |           | Raaklijn en helling visueel uitgelegd                         | 3Blue1Brown video gevolgd + zelf visualisaties geschetst       | 2                       |                   |
 | Helling bepalen               | T                  |           | Helling bepaald aan de hand van limietdefinitie              | Volledige stappen uitgewerkt met uitleg van elke tussenstap   | 2                       |                   |
@@ -21,11 +20,12 @@ Voor het bewijs maak je vaak gebruikt van notebooks die gedeeltelijk zijn gemaak
 | Backpropagation      | T                  |           |               |                | 2                       |                   |
 | Optimaliseren        | T                  |           |               |  Zelf voorbeeld uitgewerkt met \( f(x) = x^2 \). | 2                       |                   |
 | | | | | | | |
-| **Kostenfuncties** | **Vereiste soort** | **Soort** | **Opdracht** | **Eigen werk** | **Sprint (optioneel)** | *coach opmerking* |
-| Mean Squared Error | T | | | | 2 | |
-| Cross Entropy | T | | | | 2 | |
-| Softmax | T | | | | 2 | |
+| **Kostenfuncties**       | **Vereiste soort** | **Soort**           | **Opdracht**                                          | **Eigen werk**                                                                                                                                                            | **Sprint (optioneel)** | *coach opmerking* 
+| Mean Squared Error       | T                  | Theorie & Voorbeeld | Uitleg en toepassing van Mean Squared Error (MSE)      | Gebaseerd op uitleg en voorbeelden van MSE. Toegevoegd: rekenvoorbeeld met werkelijke waarden en voorspellingen, inclusief de berekening van de MSE.                      | 2                      |                    |
+| Cross Entropy            | T                  | Theorie & Voorbeeld | Uitleg en toepassing van Cross Entropy                | Gebaseerd op uitleg en voorbeelden van Cross Entropy. Toegevoegd: rekenvoorbeeld voor multiclass classificatie, inclusief de berekening van de verliesfunctie.           | 2                      |                    |
+| Softmax                  | T                  | Theorie & Voorbeeld | Uitleg en toepassing van Softmax functie             | Gebaseerd op uitleg en voorbeelden van de Softmax functie. Toegevoegd: rekenvoorbeeld van logits naar kansverdeling om de werking van Softmax duidelijk te maken.          | 2                      |                    
 | | | | | | | |
+
 | **Statistiek** | **Vereiste soort** | **Soort** | **Opdracht** | **Eigen werk** | **Sprint (optioneel)** | *coach opmerking* |
 | Scatter matrix | A | | | | 1 | |
 | Data visualiseren | A | | | | 1 | |
