@@ -496,6 +496,165 @@ De derde klasse heeft de hoogste kans → model voorspelt klasse 3.
 
 ---
 
+# Logboek Statistiek — Assessmentvoorbereiding
 
+**Gebaseerd op:** Eigen notities, tutorials, en praktijkvoorbeelden
+
+## Inhoudsopgave
+- [1. Data visualiseren](#1-data-visualiseren)
+- [2. Scatter matrix](#2-scatter-matrix)
+- [3. Normaalverdeling](#3-normaalverdeling)
+- [4. Regressie-analyse](#4-regressie-analyse)
+- [5. Z-scores](#5-z-scores)
+- [6. Standaardafwijking](#6-standaardafwijking)
+- [7. Normaliseren](#7-normaliseren)
+
+---
+
+## 1. Data visualiseren
+
+### Waarom visualiseren?
+Visualisaties helpen patronen, uitschieters en trends te herkennen die niet direct zichtbaar zijn in ruwe data.
+
+### Voorbeelden van visualisaties:
+- Histogram (verdeling)
+- Boxplot (spreiding en outliers)
+- Line chart (tijdreeksen)
+- Scatter plot (relaties tussen variabelen)
+
+Visualisaties zijn essentieel bij het verkennen van data vóórdat je modellen bouwt.
+
+---
+
+## 2. Scatter matrix
+
+### Wat is een scatter matrix?
+Een scatter matrix (of pair plot) laat alle combinaties van scatter plots tussen meerdere variabelen zien.
+
+### Waarom is het handig?
+- Je ziet correlaties visueel
+- Je kunt patronen herkennen zoals lineaire relaties of clusters
+- Het helpt bij het kiezen van relevante variabelen voor modellering
+
+**Tooltip**: In Python kun je dit maken met `seaborn.pairplot(df)`.
+
+---
+
+## 3. Normaalverdeling
+
+### Wat is het?
+Een klokvormige verdeling waar de meeste waarden rond het gemiddelde liggen.
+
+### Kenmerken:
+- Symmetrisch rond het gemiddelde
+- Gemiddelde = Mediaan = Modus
+- Ongeveer 68% van de waarden ligt binnen 1 standaardafwijking van het gemiddelde
+- Wordt vaak gebruikt als aannames voor statistische tests
+
+### Formule:
+De kansdichtheid van een normaalverdeling:
+
+\[
+f(x) = \frac{1}{\sigma \sqrt{2\pi}} \cdot e^{ -\frac{1}{2} \left( \frac{x - \mu}{\sigma} \right)^2 }
+\]
+
+Waar:
+- \( \mu \): gemiddelde
+- \( \sigma \): standaardafwijking
+
+---
+
+## 4. Regressie-analyse
+
+### Wat is regressie?
+Regressie zoekt naar een model (meestal een lijn) dat de relatie tussen een onafhankelijke en afhankelijke variabele beschrijft.
+
+### Lineaire regressie:
+Formule:
+
+\[
+y = mx + b
+\]
+
+Waar:
+- \( m \): helling (slope)
+- \( b \): intercept (waar de lijn de y-as kruist)
+
+Doel: Voorspellen van \( y \) op basis van \( x \), of inzicht krijgen in hoe \( x \) en \( y \) samenhangen.
+
+---
+
+## 5. Z-scores
+
+### Wat is een z-score?
+Een z-score zegt hoeveel standaardafwijkingen een datapunt van het gemiddelde ligt.
+
+### Formule:
+
+\[
+z = \frac{x - \mu}{\sigma}
+\]
+
+### Interpretatie:
+- \( z = 0 \): precies gemiddeld
+- \( z > 0 \): boven gemiddeld
+- \( z < 0 \): onder gemiddeld
+- Z-scores helpen bij het vinden van outliers en het vergelijken van scores uit verschillende datasets.
+
+---
+
+## 6. Standaardafwijking
+
+### Wat meet het?
+Standaardafwijking (\( \sigma \)) meet de spreiding van data rond het gemiddelde.
+
+### Formule (populatie):
+
+\[
+\sigma = \sqrt{ \frac{1}{N} \sum_{i=1}^{N} (x_i - \mu)^2 }
+\]
+
+### Hoe interpreteer je het?
+- Kleine \( \sigma \): data ligt dicht bij het gemiddelde
+- Grote \( \sigma \): data is meer verspreid
+
+---
+
+## 7. Normaliseren
+
+### Wat is normaliseren?
+Normaliseren betekent dat je data herschaalt zodat het gemiddeld 0 en een standaardafwijking van 1 heeft.
+
+### Formule:
+
+\[
+x' = \frac{x - \mu}{\sigma}
+\]
+
+Waarom?
+- Maakt variabelen vergelijkbaar
+- Essentieel bij algoritmen die gevoelig zijn voor schaal (zoals k-means, PCA, etc.)
+
+---
+
+## Reflectie
+
+Wat heb ik geleerd?
+- Statistiek is essentieel om data écht te begrijpen.
+- Visualisaties zijn krachtig voor verkenning en communicatie.
+- Begrippen als z-score en standaardafwijking maken abstracte data concreet.
+
+Wat wil ik verder ontwikkelen?
+- Meer oefenen met multivariate regressie
+- Werken met echte datasets in Python
+- Statistische inferentie en betrouwbaarheidsintervallen beter begrijpen
+
+Toepassingen:
+- Data-analyse en rapportages
+- Machine learning preprocessing
+- A/B testing en experimenten
+- Business analytics en dashboards
+
+---
 
 

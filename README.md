@@ -47,15 +47,16 @@ Voor het bewijs maak je vaak gebruikt van notebooks die gedeeltelijk zijn gemaak
 
 ### **Statistiek**
 
-| Onderwerp             | Vereiste soort | Soort | Opdracht | Eigen werk | Sprint | Coach opmerking |
-|-----------------------|----------------|--------|----------|------------|--------|------------------|
-| Scatter matrix        | A              |        |          |            | 1      |                  |
-| Data visualiseren     | A              |        |          |            | 1      |                  |
-| Normaalverdeling      | T              |        |          |            | 1      |                  |
-| Regressie-analyse     | T              |        |          |            | 1      |                  |
-| Z-scores              | T              |        |          |            | 1,2    |                  |
-| Standaardafwijking    | T              |        |          |            | 1      |                  |
-| Normaliseren          | T              |        |          |            | 1,2    |                  |
+| Onderwerp             | Vereiste soort | Soort | Opdracht | Eigen werk                                                                                      | Sprint | Coach opmerking |
+|-----------------------|----------------|--------|----------|--------------------------------------------------------------------------------------------------|--------|------------------|
+| Scatter matrix        | A              |        |          | Gebaseerd op Seaborn tutorial. Toegevoegd: scatter matrix voor eigen dataset. Analyse van correlaties tussen variabelen. | 1      |                  |
+| Data visualiseren     | A              |        |          | Zelf visualisaties gemaakt (boxplot, histogram) op basis van dataset. Geanalyseerd wat eruit af te lezen is.            | 1      |                  |
+| Normaalverdeling      | T              |        |          | Gebruikt voorbeeld uit statistiekcursus. Toegevoegd: eigen simulatie van data met normaalverdeling + visuele check (histogram + curve). | 1      |                  |
+| Regressie-analyse     | T              |        |          | Gebaseerd op sklearn tutorial. Toegevoegd: eigen dataregressie met interpretatie van de coëfficiënt en R²-score.         | 1      |                  |
+| Z-scores              | T              |        |          | Zelf z-score functie toegevoegd aan notebook. Toegepast op dataset om outliers te detecteren en te verklaren.            | 1,2    |                  |
+| Standaardafwijking    | T              |        |          | Handmatig standaardafwijking berekend in notebook om het begrip te versterken. Gevisualiseerd in boxplot.               | 1      |                  |
+| Normaliseren          | T              |        |          | Zelf normalisatiefunctie toegevoegd en toegepast op features voor clustering. Uitgelegd waarom het nodig was.           | 1,2    |                  |
+
 
 ---
 
