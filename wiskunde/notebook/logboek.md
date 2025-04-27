@@ -6,7 +6,6 @@
 - [1. Matrices](#1-matrices)
 - [2. Inproduct van vectoren](#2-inproduct-van-vectoren)
 - [3. Afstand tussen vectoren](#3-afstand-tussen-vectoren)
-- [4. Reflectie](#4-reflectie)
 
 ---
 
@@ -95,23 +94,7 @@ Dan:
 Dus de afstand tussen \( \vec{x} \) en \( \vec{y} \) is 5 eenheden.
 
 ---
-
-## 4. Reflectie
-
-Wat heb ik geleerd?
-- Ik begrijp nu hoe matrices gebruikt worden om transformaties uit te voeren.
-- Ik zie hoe het inproduct nuttig is om richtingen en hoeken te analyseren.
-- Ik kan de afstand tussen vectoren wiskundig onderbouwen en berekenen.
-
-Wat zou ik nog verder willen doen?
-- Werken met 3D vectoren en transformaties.
-- Meer toepassingen in machine learning en grafische weergave onderzoeken.
-
-Toepassingen:
-- 2D/3D graphics en animaties
-- Machine learning (zoals cosine similarity)
-- Recommender systems en clustering
-- Technische simulaties en computer vision
+---
 
 # Logboek Differentiëren — Assessmentvoorbereiding
 
@@ -124,11 +107,13 @@ Gebaseerd op:
 
 ## Inhoud
 
-1. Wat is een afgeleide?
-2. Helling als grafisch begrip
-3. Symbolisch differentiëren (zonder code)
-4. Afgeleide via limietdefinitie
-5. Samenvatting eigen werk
+
+- [1. Wat is een afgeleide?](#1-wat-is-een-afgeleide?)
+- [2. Activatiefuncties](#2-activatiefuncties)
+- [3. Helling bepalen](#3-helling-(afgeleide)-bepalen)
+- [4. Differentiëren](#4-differentiëren)
+- [5. Partieel differentiëren](#5-partieel-differentiëren)
+
 
 ---
 
@@ -146,80 +131,341 @@ Bij x = 1 is de afgeleide 2 × 1 = 2 → dit betekent dat de grafiek daar een he
 
 ---
 
-## 2. Helling als grafisch begrip
+## 2. Activatiefuncties
 
-In de video's van 3Blue1Brown wordt uitgelegd dat de afgeleide voortkomt uit het idee van een raaklijn aan een kromme.  
-Een raaklijn is de rechte lijn die precies "meeloopt" met de grafiek op één punt.
 
-Je kunt dit voorstellen als het nemen van de helling tussen twee punten (secant), en deze steeds dichter bij elkaar brengen totdat het één punt wordt. Dan krijg je de helling van de raaklijn: de afgeleide.
+Activatiefuncties zijn een essentieel onderdeel van neurale netwerken. Ze bepalen of een neuron geactiveerd wordt, en helpen het netwerk om complexe patronen te leren. Zonder activatiefuncties zou een neuraal netwerk slechts een lineaire combinatie van zijn inputs kunnen leren.
 
-**Eigen toevoeging:**  
-Ik heb zelf een schets gemaakt waarin je een kromme ziet met een raaklijn. Bij verschillende x-waarden heb ik de helling benaderd. Dit helpt visueel om het begrip beter te vatten.
+Hieronder enkele veelgebruikte activatiefuncties:
 
-**Waarom toegevoegd:**  
-Niet iedereen begrijpt formules direct. Door visueel te denken wordt het idee van "helling" en "verandering" tastbaarder.
+### 1. Sigmoid Functie
+
+De sigmoid functie zet elke input om naar een waarde tussen 0 en 1.
+
+Formule:
+
+$$
+\sigma(x) = \frac{1}{1 + e^{-x}}
+$$
+
+Eigenschappen:
+- Gebruikt bij binair classificatieproblemen.
+- Nadeel: **vanishing gradient** probleem bij grote of kleine waarden.
+
+### 2. Tanh Functie
+
+De tanh (hyperbolische tangens) functie lijkt op de sigmoid, maar schaalt de output tussen -1 en 1.
+
+Formule:
+
+$$
+\tanh(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}}
+$$
+
+Eigenschappen:
+- Vaak beter dan sigmoid, omdat de output nul-gecentreerd is.
+- Ook gevoelig voor het **vanishing gradient** probleem.
+
+### 3. ReLU (Rectified Linear Unit)
+
+ReLU is de meest gebruikte activatiefunctie in deep learning.
+
+Formule:
+
+$$
+\text{ReLU}(x) = \max(0, x)
+$$
+
+Eigenschappen:
+- Snel en eenvoudig.
+- Helpt bij het oplossen van het **vanishing gradient** probleem.
+- Kan leiden tot het **dode neuronen** probleem (neuronen die nooit meer activeren).
+
+### 4. Leaky ReLU
+
+Een variant van ReLU die een kleine negatieve helling heeft wanneer $x < 0$.
+
+Formule:
+
+$$
+\text{LeakyReLU}(x) =
+\begin{cases}
+x & \text{als } x > 0 \\
+\alpha x & \text{anders} \quad (\text{meestal } \alpha = 0.01)
+\end{cases}
+$$
+
+Eigenschappen:
+- Probeert het probleem van dode neuronen op te lossen.
+
+### 5. Softmax Functie
+
+Wordt vaak gebruikt in de outputlaag bij classificatieproblemen met meerdere klassen.
+
+Formule voor de i-de klasse:
+
+$$
+\text{Softmax}(x_i) = \frac{e^{x_i}}{\sum_j e^{x_j}}
+$$
+
+Eigenschappen:
+- Zet outputs om in waarschijnlijkheidsdistributies (som = 1).
 
 ---
 
-## 3. Symbolisch differentiëren (zonder code)
+> **Samenvatting:** Activatiefuncties introduceren niet-lineariteit in het netwerk, waardoor het complexe relaties kan leren tussen invoer en uitvoer.
+---
 
-Voor standaardfuncties kun je de afgeleide berekenen met bekende regels:
+## 3. Helling (Afgeleide) Bepalen
 
-- Machtregel:  
-  Als f(x) = xⁿ, dan is f '(x) = n·xⁿ⁻¹  
-  Voorbeeld: f(x) = x³ → f '(x) = 3x²
+De **helling** geeft aan hoe snel een functie verandert op een bepaald punt. In neurale netwerken gebruiken we de helling (de afgeleide) om te bepalen hoe we gewichten moeten aanpassen.
 
-- Somregel:  
-  De afgeleide van f(x) + g(x) is f '(x) + g '(x)
+De basisideeën:
 
-- Constantefactorregel:  
-  De afgeleide van c·f(x) is c·f '(x)
+### Wat is een helling?
 
-- Productregel:  
-  f(x)·g(x) → f '(x)·g(x) + f(x)·g '(x)
+De helling van een functie op een punt geeft aan hoe steil de grafiek daar is.  
+- Positieve helling → lijn stijgt
+- Negatieve helling → lijn daalt
+- Helling nul → vlak
 
-- Quotientregel:  
-  f(x)/g(x) → (f '(x)·g(x) - f(x)·g '(x)) / g(x)²
+### Helling Formule
 
-- Kettingregel:  
-  Als f(x) = h(g(x)), dan is f '(x) = h '(g(x))·g '(x)
+De helling wordt wiskundig uitgedrukt als de **afgeleide**.
 
-**Eigen toevoeging:**  
-Ik heb oefenvoorbeelden uitgewerkt met verschillende regels gecombineerd, zoals een product én kettingregel in één. Deze heb ik voorzien van uitleg bij elke stap.
+Formeel:
 
-**Waarom toegevoegd:**  
-In het assessment wil ik laten zien dat ik de regels niet alleen ken, maar ze ook kan combineren en toepassen op complexere functies.
+$$
+\text{Helling} = \lim_{\Delta x \to 0} \frac{f(x + \Delta x) - f(x)}{\Delta x}
+$$
+
+**Betekenis:**  
+De helling is de verandering van $f(x)$ gedeeld door de verandering in $x$ als $\Delta x$ heel klein wordt.
+
+### Voorbeeld
+
+Stel:
+
+$$
+f(x) = x^2
+$$
+
+Dan is de afgeleide:
+
+$$
+f'(x) = 2x
+$$
+
+Dus:
+- Bij $x = 3$ is de helling $2 \times 3 = 6$
+- De grafiek stijgt daar vrij steil omhoog.
+
+### Gebruik van de Helling in Neurale Netwerken
+
+In neurale netwerken wordt de helling gebruikt om:
+- De **richting** van de fout (loss) te bepalen (welke kant moet het gewicht op?)
+- De **snelheid** van de aanpassing te bepalen (hoe groot moet de aanpassing zijn?)
+
+Tijdens backpropagation wordt voor elke activatiefunctie de afgeleide (helling) berekend.
 
 ---
 
-## 4. Afgeleide via limietdefinitie
-
-De definitie van de afgeleide is gebaseerd op een limiet:
-
-f '(x) = lim(h → 0) [(f(x + h) - f(x)) / h]
-
-Deze formule betekent:  
-De afgeleide is de grenswaarde van de gemiddelde verandering van de functie tussen twee dichtbije punten, naarmate het verschil h kleiner en kleiner wordt.
-
-Voorbeeld met f(x) = x²:
-
-- f(x + h) = (x + h)² = x² + 2xh + h²  
-- f(x + h) - f(x) = 2xh + h²  
-- (f(x + h) - f(x)) / h = 2x + h  
-- lim(h → 0) = 2x
-
-Dus: f '(x) = 2x
-
-**Eigen toevoeging:**  
-Ik heb deze stap-voor-stap uitgewerkt voor meerdere functies (zoals x³, √x en 1/x) op papier en uitgelegd wat er in elke stap gebeurt.
-
-**Waarom toegevoegd:**  
-Dit laat zien dat ik de definitie begrijp, en niet alleen regels toepas. Het helpt ook bij functies waarbij regels niet meteen toepasbaar zijn.
+> **Samenvatting:**  
+> De helling vertelt hoe snel een functie verandert. In machine learning gebruiken we de helling om gewichten aan te passen en het netwerk te trainen.
 
 
 ---
 
-## 5. Gradient Descent
+## 4. Differentiëren
+
+**Differentiëren** is het proces waarbij je de **afgeleide** van een functie bepaalt. De afgeleide vertelt ons hoe snel de functie verandert op een bepaald punt.
+
+Differentiëren is een basisconcept in de calculus en wordt veel gebruikt in machine learning, bijvoorbeeld om de gradiënt te berekenen tijdens het trainen van neurale netwerken.
+
+---
+
+### Wat is differentiëren?
+
+Differentiëren betekent het berekenen van de **helling** van een functie op elk punt.  
+De uitkomst van een differentiaalbewerking is een nieuwe functie: de **afgeleide functie**.
+
+- De afgeleide op een punt geeft de **momentane verandering** aan.
+- In grafieken: de afgeleide geeft de **richtingscoëfficiënt van de raaklijn**.
+
+---
+
+### Formule voor differentiëren
+
+De definitie van de afgeleide van een functie $f(x)$ is:
+
+$$
+f'(x) = \lim_{\Delta x \to 0} \frac{f(x + \Delta x) - f(x)}{\Delta x}
+$$
+
+**Interpretatie:**  
+- $f(x + \Delta x)$ is de functiewaarde iets verderop.
+- $f(x)$ is de functiewaarde op $x$.
+- De limiet zorgt ervoor dat we kijken naar een *oneindig klein stukje*.
+
+---
+
+### Belangrijke Differentiatieregels
+
+Hier een paar standaard regels die je vaak nodig hebt:
+
+- **Machtsregel**:
+  $$
+  \frac{d}{dx}x^n = n x^{n-1}
+  $$
+- **Somregel**:
+  $$
+  \frac{d}{dx}(f(x) + g(x)) = f'(x) + g'(x)
+  $$
+- **Productregel**:
+  $$
+  \frac{d}{dx}(f(x)g(x)) = f'(x)g(x) + f(x)g'(x)
+  $$
+- **Quotiëntregel**:
+  $$
+  \frac{d}{dx}\left(\frac{f(x)}{g(x)}\right) = \frac{f'(x)g(x) - f(x)g'(x)}{g(x)^2}
+  $$
+- **Ketenregel**:
+  $$
+  \frac{d}{dx}f(g(x)) = f'(g(x)) \cdot g'(x)
+  $$
+
+---
+
+### Voorbeeld
+
+Stel:
+
+$$
+f(x) = 3x^2 + 2x
+$$
+
+Differentieer:
+
+$$
+f'(x) = 6x + 2
+$$
+
+Dus:
+- Bij $x = 2$ is de afgeleide $6 \times 2 + 2 = 14$.
+- De helling van de grafiek bij $x = 2$ is 14 (de grafiek stijgt daar flink).
+
+---
+
+### Gebruik van Differentiëren in Machine Learning
+
+- Wordt gebruikt om de **gradiënt** van de verliesfunctie (loss function) te berekenen.
+- Helpt bij het bepalen **hoe de parameters (gewichten) moeten worden aangepast**.
+- Centrale stap in **backpropagation**.
+
+---
+
+> **Samenvatting:**  
+> Differentiëren is het vinden van de afgeleide van een functie. In machine learning is differentiëren cruciaal om te leren hoe het model moet verbeteren.
+---
+
+## 5. Partieël Differentieren
+
+**Partieel differentiëren** gebruik je wanneer je een functie hebt met meerdere variabelen (bijvoorbeeld $f(x, y)$).  
+Je bepaalt dan de afgeleide **met respect tot één variabele**, terwijl je de andere variabelen **constant** houdt.
+
+Partieel differentiëren is essentieel in machine learning, bijvoorbeeld bij het optimaliseren van functies met meerdere parameters.
+
+---
+
+### Wat is partieel differentiëren?
+
+Bij een functie $f(x, y)$:
+- $\frac{\partial f}{\partial x}$ betekent: de afgeleide van $f$ naar $x$, waarbij $y$ constant blijft.
+- $\frac{\partial f}{\partial y}$ betekent: de afgeleide van $f$ naar $y$, waarbij $x$ constant blijft.
+
+**Belangrijk:** Alleen de variabele waar je naar differentieert verandert; de andere blijft vast!
+
+---
+
+### Notatie voor partieel differentiëren
+
+De partiële afgeleide van $f(x, y)$ naar $x$ schrijf je als:
+
+$$
+\frac{\partial f}{\partial x}
+$$
+
+En naar $y$ als:
+
+$$
+\frac{\partial f}{\partial y}
+$$
+
+---
+
+### Voorbeeld
+
+Stel:
+
+$$
+f(x, y) = 3x^2y + 2xy^3
+$$
+
+De partiële afgeleiden zijn:
+
+- Naar $x$:
+
+$$
+\frac{\partial f}{\partial x} = 6xy + 2y^3
+$$
+
+- Naar $y$:
+
+$$
+\frac{\partial f}{\partial y} = 3x^2 + 6xy^2
+$$
+
+**Opmerking:** Bij het differentiëren naar $x$ behandel je $y$ als een constante, en andersom.
+
+---
+
+### Partiёel Differentieren in Machine Learning
+
+In machine learning (bijvoorbeeld bij gradient descent) gebruik je partieel differentiëren om:
+
+- Voor elke parameter de richting van de fout te bepalen.
+- De **gradiëntvector** te berekenen: alle partiële afgeleiden samen vormen de richting waarin de loss het snelst stijgt.
+
+De gradiëntvector is:
+
+$$
+\nabla f(x, y) = \left( \frac{\partial f}{\partial x}, \frac{\partial f}{\partial y} \right)
+$$
+
+---
+
+### Ketenregel voor meerdere variabelen
+
+Als een functie samengestelde variabelen heeft, gebruik je de **ketenregel** voor partiële afgeleiden:
+
+Bijvoorbeeld:
+
+$$
+\frac{dz}{dt} = \frac{\partial z}{\partial x}\frac{dx}{dt} + \frac{\partial z}{\partial y}\frac{dy}{dt}
+$$
+
+waar $z = f(x(t), y(t))$.
+
+---
+
+> **Samenvatting:**  
+> Bij partieel differentiëren neem je de afgeleide naar één variabele, en behandel je de andere variabelen als constant. In machine learning wordt dit gebruikt om gradiënten te berekenen voor functies met meerdere parameters.
+
+
+---
+---
+
+  # Logboek Gradient Descent
 
 ### Inhoudsopgave
 - [Wat is gradient descent?](#wat-is-gradient-descent)
@@ -280,7 +526,7 @@ Waar:
 
 ---
 
-### Voorbeeld (1D)
+### Voorbeeld
 
 Stel je hebt deze eenvoudige functie:
 \[
@@ -307,7 +553,7 @@ Na genoeg stappen kom je uit bij het minimum \( x = 0 \).
 
 ---
 
-### Backpropagation (kort uitgelegd)
+### Backpropagation
 
 In neurale netwerken gebruik je **backpropagation** om de gradiënten te berekenen die nodig zijn voor gradient descent. Het is een slimme manier om de afgeleiden van de lossfunctie t.o.v. alle gewichten efficiënt uit te rekenen, door gebruik te maken van de kettingregel uit de differentiaalrekening.
 
