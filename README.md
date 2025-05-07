@@ -60,15 +60,16 @@ Voor het bewijs maak je vaak gebruikt van notebooks die gedeeltelijk zijn gemaak
 
 ---
 
-### **Feature selection**
+### **Feature selectie**
 
 | Onderwerp             | Vereiste soort | Soort | Opdracht | Eigen werk | Sprint | Coach opmerking |
-|------------------------|----------------|--------|----------|------------|--------|------------------|
-| T-toets                | A              |        |          |            | 1      |                  |
-| ANOVA                  | T              |        |          |            | 1,2    |                  |
-| Correlatiematrix       | A              |        |          |            | 1      |                  |
-| PCA                    | T              |        |          |            | 2      |                  |
-| Bias en betrouwbaarheid| T              |        |          |            | 2      |                  |
+|-----------------------|----------------|-------|----------|------------|--------|------------------|
+| T-toets               | A              |       | Uitgevoerd een T-toets om twee soorten (Setosa vs Versicolor) te vergelijken op basis van de kroonblad lengte. | Gewijzigd van een tutorial over statistische testen in Python. Toegevoegd: context voor de dataset en interpretatie van de p-waarde. | 1      |                  |
+| ANOVA                 | T              |       | Uitgevoerd een ANOVA om de kroonblad lengtes tussen drie soorten te vergelijken. | Geïnspireerd door een ANOVA tutorial in Python. Code toegevoegd om de resultaten te visualiseren. | 1,2    |                  |
+| Correlatiematrix      | A              |       | Gecreëerd een correlatiematrix voor de relaties tussen de features. | Geïnspireerd door een veelgebruikte seaborn heatmap tutorial. Aangepast de plot en toegevoegd: interpretatie van de features op basis van de dataset. | 1      |                  |
+| PCA                   | T              |       | Toegepast PCA voor dimensiereductie en de eerste twee componenten gevisualiseerd. | Gebaseerd op een PCA tutorial van scikit-learn. De analyse uitgebreid om de verklaarde variantie en relevantie voor feature selectie te omvatten. | 2      |                  |
+| Bias en betrouwbaarheid | T              |       | Bias in het model onderzocht door cross-validatie en betrouwbaarheid vergeleken door modelprestaties met en zonder specifieke features. | Gebouwd op cross-validatie voorbeelden van scikit-learn. Uitleg toegevoegd over de mogelijke bias in modelresultaten en interpretatie van betrouwbaarheid. | 2      |                  |
+
 
 ---
 
