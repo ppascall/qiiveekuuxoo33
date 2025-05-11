@@ -81,21 +81,19 @@ Voor het bewijs maak je vaak gebruikt van notebooks die gedeeltelijk zijn gemaak
 
 ---
 
-### **Model selecteren, instellen, trainen en testen/valideren**
-
-| Onderwerp                          | Vereiste soort | Soort | Opdracht | Eigen werk | Sprint | Coach opmerking |
-|------------------------------------|----------------|--------|----------|------------|--------|------------------|
-| Geschikt algoritme kiezen          | A              |        |          |            | 3      |                  |
-| KNN                                | A              |        |          |            | 1      |                  |
-| SVM                                | A              |        |          |            | 1      |                  |
-| Naive Bayes                        | A              |        |          |            | 1      |                  |
-| Linear regression                  | A              |        |          |            | 1      |                  |
-| Logistic regression                | A              |        |          |            | 1      |                  |
-| Decision tree                      | A              |        |          |            | 1      |                  |
-| Random forest                      | A              |        |          |            | 1      |                  |
-| Supervised vs unsupervised learning| K              |        |          |            | 1      |                  |
-| Geschikte performance measures kiezen | A           |        |          |            | 1      |                  |
-| Clustering                         | T              |        |          |            | 2      |                  |
+| Onderwerp                             | Vereiste soort | Soort         | Opdracht                                        | Eigen werk                                                                           | Sprint | Coach opmerking |
+| ------------------------------------- | -------------- | ------------- | ----------------------------------------------- | ------------------------------------------------------------------------------------ | ------ | --------------- |
+| Geschikt algoritme kiezen             | A              | Analyse       | Vergelijken van modellen op dataset             | Uitleg waarom welk algoritme geschikt is voor classificatie vs regressie             | 3      |                 |
+| KNN                                   | A              | Implementatie | KNN-model getraind op Iris dataset              | Toegevoegd met uitleg over parameters (bijv. `n_neighbors`) en resultaatvergelijking | 1      |                 |
+| SVM                                   | A              | Implementatie | SVM getraind                                    | Toegevoegd inclusief uitleg kerneltype en resultaten                                 | 1      |                 |
+| Naive Bayes                           | A              | Implementatie | Model op Iris dataset                           | Toegevoegd met uitleg probabilistisch model                                          | 1      |                 |
+| Linear regression                     | A              | Implementatie | Model op diabetes dataset                       | Correct toegepast voor regressie, met metrics als MSE/R²                             | 1      |                 |
+| Logistic regression                   | A              | Implementatie | Model op Iris dataset                           | Toegevoegd en toegepast op classificatie met `classification_report`                 | 1      |                 |
+| Decision tree                         | A              | Implementatie | Model getraind op Iris dataset                  | Toegevoegd met uitleg over overfitting en visualisatie-opties                        | 1      |                 |
+| Random forest                         | A              | Implementatie | Model getraind                                  | Toegevoegd, prestatie vergeleken met decision tree                                   | 1      |                 |
+| Supervised vs unsupervised learning   | K              | Uitleg        | Verschil uitgelegd in tekstcellen               | Zelfgeschreven toelichting + voorbeelden per type                                    | 1      |                 |
+| Geschikte performance measures kiezen | A              | Analyse       | Metrics voor classificatie en regressie gekozen | Toelichting wanneer je `accuracy`, `r2`, of `silhouette` gebruikt                    | 1      |                 |
+| Clustering                            | T              | Toepassing    | KMeans clustering op Iris dataset               | Zelf toegepast + visualisatie toegevoegd                                             | 2      |                 |
 
 ---
 
