@@ -1,6 +1,10 @@
-Voor het bewijs maak je vaak gebruikt van notebooks die gedeeltelijk zijn gemaakt door een ander of vanuit een tutorial, geef in het notebook aan wie de originele maker was of welke tutorial je hebt gevolgt geef daarna duidelijk aan wat je hebt toegevoegd wat het doet en ook waarom. In het assessment wordt voornamelijk gegekeken naar jou toevoegingen die kan je dan gebruiken in het gesprek.
-
-( K = Kennis van hebben, T = Toepassen , A = Analyseren , C = Creatie )
+| Onderwerp                         | Vereiste soort | Soort | Opdracht            | Eigen werk | Sprint | Coach opmerking |
+| --------------------------------- | -------------- | ----- | ------------------- | ---------- | ------ | --------------- |
+| Overfitting en underfitting       | A              | A     | Notebook uitgewerkt | Ja         | 1      |                 |
+| Learning curve                    | A              | A     | Notebook uitgewerkt | Ja         | 1      |                 |
+| Confusion matrix                  | A              | A     | Notebook uitgewerkt | Ja         | 1      |                 |
+| ROC curve                         | A              | A     | Notebook uitgewerkt | Ja         | 1      |                 |
+| Testen op bias en betrouwbaarheid | T              | T     | Notebook uitgewerkt | Ja         | 3      |                 |
 
 ### **Lineaire algebra**
 
