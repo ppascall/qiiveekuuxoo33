@@ -124,12 +124,12 @@ Voor het bewijs maak je vaak gebruikt van notebooks die gedeeltelijk zijn gemaak
 
 ### **Model verbeteren**
 
-| Onderwerp         | Vereiste soort | Soort | Opdracht | Eigen werk | Sprint | Coach opmerking |
-|-------------------|----------------|--------|----------|------------|--------|------------------|
-| Cross validation  | T              |        |          |            | 1      |                  |
-| Ensemble methods  | T              |        |          |            | 2      |                  |
-| Transfer learning | T              |        |          |            | 2      |                  |
-| XAI extensies     | A              |        |          |            | 3      |                  |
+| Onderwerp         | Vereiste soort | Soort      | Opdracht                                                                            | Eigen werk                                                                                      | Sprint | Coach opmerking |
+| ----------------- | -------------- | ---------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ------ | --------------- |
+| Cross validation  | T              | Toepassen  | K-Fold cross validation toegepast op RandomForestClassifier met `cross_val_score()` | Zelf geïmplementeerd om modelbetrouwbaarheid te testen via gemiddelde nauwkeurigheid over folds | 1      |                 |
+| Ensemble methods  | T              | Toepassen  | RandomForestClassifier gebruikt als ensemble methode                                | Zelf gekozen voor RandomForest, uitgelegd waarom (stabiel, robuust tegen overfitting)           | 2      |                 |
+| Transfer learning | T              | Toepassen  | Voorbeeld gebruikt met `keras.applications.MobileNetV2` als pretrained CNN          | Zelf toegevoegd en getraind op kleine eigen dataset, layers ge-finetuned                        | 2      |                 |
+| XAI extensies     | A              | Analyseren | SHAP gebruikt om uitleg te geven over RandomForest voorspellingen                   | Zelf SHAP toegevoegd, probleem opgelost met fitting en uitleg gegeven bij interpretatie         | 3      |                 |
 
 ---
 
