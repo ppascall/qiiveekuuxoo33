@@ -1,3 +1,8 @@
+Voor het bewijs maak je vaak gebruikt van notebooks die gedeeltelijk zijn gemaakt door een ander of vanuit een tutorial, geef in het notebook aan wie de originele maker was of welke tutorial je hebt gevolgt geef daarna duidelijk aan wat je hebt toegevoegd wat het doet en ook waarom. In het assessment wordt voornamelijk gegekeken naar jou toevoegingen die kan je dan gebruiken in het gesprek.
+( K = Kennis van hebben, T = Toepassen , A = Analyseren , C = Creatie )
+
+### **Evalueren**
+
 | Onderwerp                         | Vereiste soort | Soort | Opdracht            | Eigen werk | Sprint | Coach opmerking |
 | --------------------------------- | -------------- | ----- | ------------------- | ---------- | ------ | --------------- |
 | Overfitting en underfitting       | A              | A     | Notebook uitgewerkt | Ja         | 1      |                 |
@@ -103,17 +108,17 @@
 
 ### **Deep neural networks**
 
-| Onderwerp               | Vereiste soort | Soort | Opdracht | Eigen werk | Sprint | Coach opmerking |
-|-------------------------|----------------|--------|----------|------------|--------|------------------|
-| Dense neural network    | A              |        |          |            | 2      |                  |
-| Convolutional neural network | A         |        |          |            | 2      |                  |
-| Residual neural network | K              |        |          |            | 2      |                  |
-| Autoencoders            | T              |        |          |            | 2      |                  |
-| Diffusion               | T              |        |          |            | 2      |                  |
-| Recurrent neural network| K              |        |          |            | 2      |                  |
-| Transformers            | T              |        |          |            | 3      |                  |
-| Adversarial learning    | T              |        |          |            | 3      |                  |
-| Reinforcement learning  | T              |        |          |            | 2      |                  |
+| Onderwerp                    | Vereiste soort | Soort    | Opdracht                                                              | Eigen werk                                                                      | Sprint | Coach opmerking |
+| ---------------------------- | -------------- | -------- | --------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------ | --------------- |
+| Dense neural network         | A              | Notebook | In het notebook heb ik een volledig dense netwerk gebouwd in PyTorch. | Ik heb zelf het netwerk opgebouwd zonder gebruik van pretrained modellen.       | 2      |                 |
+| Convolutional neural network | A              | Notebook | Een eenvoudige CNN met twee convolutielagen.                          | Zelf opgezet zonder tutorial, geconfigureerd voor input van MNIST-achtige data. | 2      |                 |
+| Residual neural network      | K              | Notebook | Gebruikt `resnet18` van torchvision.                                  | Aangepast zodat het geschikt is voor 10 klassen i.p.v. 1000.                    | 2      |                 |
+| Autoencoders                 | T              | Notebook | Encoder en decoder lagen toegevoegd.                                  | Zelf gedefinieerd zonder externe tutorials, inclusief activatiefuncties.        | 2      |                 |
+| Diffusion                    | T              | Notebook | Een eenvoudige 'denoising' structuur.                                 | Eigen implementatie als vereenvoudigde versie van diffusion models.             | 2      |                 |
+| Recurrent neural network     | K              | Notebook | Een basale RNN met PyTorch `nn.RNN`.                                  | Zelf toegevoegd, inclusief input preprocessing.                                 | 2      |                 |
+| Transformers                 | T              | Notebook | Gebaseerd op `TransformerEncoderLayer`.                               | Eigen aangepaste embedlaag toegevoegd voor input van sequenties.                | 3      |                 |
+| Adversarial learning         | T              | Notebook | GAN model met Generator en Discriminator.                             | Zelf opgebouwd, met uitleg waarom bepaalde architecturen zijn gekozen.          | 3      |                 |
+| Reinforcement learning       | T              | Notebook | Simpele DQN-agent toegevoegd.                                         | Eigen structuur met sequentiële lagen en activaties.                            | 2      |                 |
 
 ---
 
