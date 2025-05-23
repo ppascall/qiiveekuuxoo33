@@ -134,24 +134,23 @@ Voor het bewijs maak je vaak gebruikt van notebooks die gedeeltelijk zijn gemaak
 ---
 
 ### **Evalueren**
-
-| Onderwerp                  | Vereiste soort | Soort | Opdracht | Eigen werk | Sprint | Coach opmerking |
-|----------------------------|----------------|--------|----------|------------|--------|------------------|
-| Overfitting en underfitting| A              |        |          |            | 1      |                  |
-| Learning curve             | A              |        |          |            | 1      |                  |
-| Confusion matrix           | A              |        |          |            | 1      |                  |
-| ROC curve                  | A              |        |          |            | 1      |                  |
-| Testen op bias en betrouwbaarheid | T        |        |          |            | 3      |                  |
+| Onderwerp                         | Vereiste soort | Soort     | Opdracht                        | Eigen werk   | Sprint | Coach opmerking                                           |
+| --------------------------------- | -------------- | --------- | ------------------------------- | ------------ | ------ | --------------------------------------------------------- |
+| Overfitting en underfitting       | A              | Analyse   | Uitleg + modelvergelijking      | Ja           | 1      |                                                           |
+| Learning curve                    | A              | Analyse   | Learning curve visualisatie     | Gedeeltelijk | 1      | Voeg uitleg toe + waarom nuttig                           |
+| Confusion matrix                  | A              | Analyse   | Confusion matrix & visualisatie | Ja           | 1      |                                                           |
+| ROC curve                         | A              | Analyse   | ROC-curve & AUC berekening      | Ja           | 1      |                                                           |
+| Testen op bias en betrouwbaarheid | T              | Toepassen | Niet aanwezig                   | Nee          | 3      | Voeg analyse toe zoals fairness metrics of bias detection |
 
 ---
 
 ### **Toepassingen**
 
-| Onderwerp                            | Vereiste soort | Soort | Opdracht | Eigen werk | Sprint | Coach opmerking |
-|--------------------------------------|----------------|--------|----------|------------|--------|------------------|
-| Neural network from scratch          | C              |        |          |            | 1      |                  |
-| Optimaliseren (gebruik GPU, Cloud…)  | T              |        |          |            | 3      |                  |
-| Kwaliteit AAI software               | T              |        |          |            | 3      |                  |
-| DL voor object detectie              | T              |        |          |            | 2,3    |                  |
-| Werken volgens planning              | C              |        |          |            | 3      | [This is an internal link to weekplanning](weekplanning.md) |
-| Taalmodellen verfijnen en integreren| T              |        |          |            | 3      |                  |
+| Onderwerp                            | Vereiste soort | Soort     | Opdracht                                   | Eigen werk   | Sprint | Coach opmerking                             |
+| ------------------------------------ | -------------- | --------- | ------------------------------------------ | ------------ | ------ | ------------------------------------------- |
+| Neural network from scratch          | C              | Creatie   | Simpele 2-layer NN met numpy               | Ja           | 1      | Goed startpunt, geef uitleg over backprop   |
+| Optimaliseren (gebruik GPU, Cloud…)  | T              | Toepassen | Transformer model getest op Colab met GPU  | Ja           | 3      | Benoem impact op performance                |
+| Kwaliteit AAI software               | T              | Toepassen | Niet aanwezig                              | Nee          | 3      | Voeg teststrategie en edge cases toe        |
+| DL voor object detectie              | T              | Toepassen | Niet aanwezig                              | Nee          | 2,3    | Voeg detectievoorbeeld toe (bijv. YOLOv5)   |
+| Werken volgens planning              | C              | Creatie   | Niet expliciet aanwezig                    | Nee          | 3      | Voeg reflectie of planningsoverzicht toe    |
+| Taalmodellen verfijnen en integreren | T              | Toepassen | Basisgebruik HuggingFace pipeline aanwezig | Gedeeltelijk | 3      | Voeg fine-tuning of integratievoorbeeld toe |
